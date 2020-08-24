@@ -7,9 +7,11 @@ public class FireEffect : MonoBehaviour
 {
 
     public Light2D light2d;
+    public float outerRadius;
+    public float cosMultiplier;
     // Update is called once per frame
     void FixedUpdate()
     {
-        light2d.pointLightOuterRadius = 5.5f + (Mathf.Cos(Time.time));
+        light2d.pointLightOuterRadius = outerRadius + (cosMultiplier * Mathf.Cos(Time.time));
     }
 }
